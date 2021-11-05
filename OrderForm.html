@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+    
+      Rinaldi's Italian Specialties Pickupp Order From
+      Author: Dylan Madru
+      Date:  12-4-2018
+      
+
+   -->
+   
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Rinaldi's Italian Specialties</title>
+   <link href="OrderForm.css" rel="stylesheet" />
+
+
+   <title>Rinaldi's Pickup</title>
+   <link href="Main.css" rel="stylesheet" />
+   <script src="orderform.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1><img src="Deli-Sign.jpg" alt="Rinaldi's Italian Specialties" id="logoimg" /></h1>
+      <nav>
+         <ul>
+            <li><a href="ct-home.html">Home</a></li>
+            <li><a href="OrderForm.html">Orders</a></li>
+            <li><a href="ct-menu.html">Menu</a></li>
+            <li><a href="ct-reviews.html">Reviews</a></li>
+         </ul>
+      </nav>
+   </header>
+   <section>
+      <h2>Pickup Order Form</h2>
+      
+      <p>Required values are marked by an asterisk (*)</p>
+
+      <form id="pizzaForm" name="pizzaForm" action="">
+        <fieldset id="custInfo">
+            
+                <legend>Customer Information</legend>
+                <div class="formRow">
+                    <label for"name">Name*</label> 
+                    <input name="custName" id="name" type="text" placeholder="first and last name" required />
+                </div>
+
+                <div class="formRow">
+                    <label for"phone"> Phone number</label>
+                    <input name="custPhone" id="phone" type="tel" placeholder="(nnn) nnn-nnnnn"
+                    pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" />
+                </div>
+                <div class="formRow">
+                    <label for"pickupTime"> Pickup Time*</label>
+                    <input name="pTime" value="12:00" id="time" type="time" required />
+                </div>
+        </fieldset>
+        <fieldset>
+                <legend>Menu</legend>
+
+               <input type="radio" name="menuSection" id="pizzaMenu" checked/> Pizza
+               <input type="radio" name="menuSection" id="pastaMenu"/> Pasta
+               <input type="radio" name="menuSection" id="appMenu"/> Appetizers
+               <input type="radio" name="menuSection" id="drinkMenu"/> Drinks 
+               <br>
+               <br>
+               <div>
+                Menu: <select name="menuSelection" id="menuSelection"></select>
+                Qty:
+                <input name="itemQty" id="itemQty" type="number"
+                value="1" step="1" min="0" max="100" />
+               </div>
+                <div id="button">
+                  <input type="button" id="addOrder" name="addOrder" value="Add To My Order" />
+                  
+              </div>
+
+        </fieldset>
+        <fieldset id= "orderSummary">
+                    <legend>Order Summary</legend>
+            <table>
+                <tr>
+                    <td>Customer Name: </td>
+                    <td id="summaryCustName"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number: </td>
+                    <td id="summaryCustPhone"></td>
+                </tr>
+                <tr>
+                    <td>Pickup Time: </td>
+                    <td id="summaryPickupTime"></td>
+                </tr>
+            </table>
+            <div>
+                Order items:
+                <ul id="itemList"></ul>
+            </div>
+            <table>
+                <tr>
+                     <td>10% Tip:</td>
+                    <td id = "orderTip"></td>
+                </tr>
+                <tr>
+                    <td>Tax:</td>
+                    <td id = "orderTax"></td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td id="orderTotal"></td>
+                </tr>
+            </table>
+
+
+        </fieldset>
+        
+      </form>
+
+     
+   </section>
+   <footer>
+      
+   </footer>
+</body>
+</html>
